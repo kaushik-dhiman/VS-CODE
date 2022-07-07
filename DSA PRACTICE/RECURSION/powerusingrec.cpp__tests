@@ -1,0 +1,34 @@
+[
+	{
+		"correct_answers":
+		[
+			"16",
+			"16 : 16"
+		],
+		"test": "2 4\n"
+	},
+	{
+		"correct_answers":
+		[
+			"27 : 27",
+			"27"
+		],
+		"test": "3\n3\n"
+	},
+	{
+		"test": "2 3\n",
+		"uncorrect_answers":
+		[
+			"8 : 12"
+		]
+	},
+	{
+		"test": "3 4\n"
+	},
+	{
+		"test": "3 2\n"
+	},
+	{
+		"test": ""
+	}
+]

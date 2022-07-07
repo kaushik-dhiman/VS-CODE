@@ -1,0 +1,18 @@
+<html>
+<head><title>Interoperable Web Technologies</title></head>
+<body>
+    <p id="demo"></p>
+    <script>
+    let header="Heading";
+    let tags=["HTML", "JSP", "NodeJS"];
+    let html= `<h2>${header}</h2><ul>`;
+    for(const x of tags) 
+    {
+    html += `<li>${x}</li>`;
+    }
+    html += `</ul>`;
+    
+    document.getElementById("demo").innerHTML=html;
+</script>
+    </body>    
+</html>
