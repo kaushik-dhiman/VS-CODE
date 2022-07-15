@@ -1,0 +1,73 @@
+// for connected graphs 
+class Solution {
+  public:
+    void BFS(int V, vector<int> adj[],vector<int>& ans)
+    {
+        queue<int> q;
+        unordered_map<int, bool> vis;
+        q.push(0);
+        vis[0] = true;
+        
+        while(!q.empty())
+        {
+            int t = q.front();
+            q.pop();
+            ans.push_back(t);
+            for(auto x: adj[t]) 
+            {
+                if(!vis[x])
+                {
+                    q.push(x);
+                    vis[x] = true;
+                }
+            }
+        }
+    }
+    
+ 
+    vector<int> bfsOfGraph(int V, vector<int> adj[]) 
+    {
+        vector<int> ans;
+        BFS(V,adj,ans);
+        return ans;
+    }
+};
+
+
+////////////////////FOR DISCONNECTED GRAPHS
+
+class Solution {
+  public:
+    void BFS(int i,unordered_map<int, bool>& vis,vector<int> adj[],vector<int>& ans)
+    {
+        queue<int> q;
+        q.push(i);
+        vis[i] = true;
+        
+        while(!q.empty())
+        {
+            int t = q.front();
+            q.pop();
+            ans.push_back(t);
+            for(auto x: adj[t]) 
+            {
+                if(!vis[x])
+                {
+                    q.push(x);
+                    vis[x] = true;
+                }
+            }
+        }
+    }
+    
+ 
+    vector<int> bfsOfGraph(int V, vector<int> adj[]) 
+    {
+        vector<int> ans;
+        unordered_map<int, bool> vis;
+        for(int i = 0; i < V; i++)
+            if(!vis[i])
+                BFS(i,vis,adj,ans);
+        return ans;
+    }
+};

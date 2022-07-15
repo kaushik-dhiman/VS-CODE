@@ -62,7 +62,7 @@ int main()
     Graph_AL G;
     G.getValue();
     G.createGraph();
-    int source = 0;
+    int source = 1;
     cout << "\nEnter the Source Node : ";
     cin >> source;
     G.BFS(source);

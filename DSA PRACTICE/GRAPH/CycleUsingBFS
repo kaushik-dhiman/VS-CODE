@@ -1,0 +1,52 @@
+////////////TLE  DERA GFG PE
+
+class Solution {
+  public:
+  
+    bool isCycleBFS(int src,unordered_map<int, bool>& vis, vector<int> adj[])
+    {
+        unordered_map<int,int> parent;
+        vis[src] = true; 
+        parent[src] = -1;
+        queue<int> q;
+        q.push(src);
+        
+        while(!q.empty())
+        {
+            int front = q.front();
+            q.pop();
+            
+            for(auto neighbour : adj[front])
+            {
+                if(vis[neighbour] == true && neighbour != parent[front])
+                {
+                   return true;
+                }
+                else if(!vis[neighbour])
+                {
+                    q.push(neighbour);
+                    vis[neighbour] = true;
+                    parent[neighbour] = front;
+                }
+            }
+        }
+        return false;
+    }
+  
+    // Function to detect cycle in an undirected graph.
+    bool isCycle(int V, vector<int> adj[]) {
+        bool ans;
+        unordered_map<int, bool> vis;
+        
+        for(int i = 0; i < V; i++)
+        {
+            if(!vis[i])
+            {
+                ans = isCycleBFS(i, vis,adj);
+                if(ans == true) return ans;
+            }
+        }
+        return ans;
+    }
+};
+
