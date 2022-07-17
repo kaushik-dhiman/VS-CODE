@@ -34,9 +34,20 @@ node* buildTree(node* root)
     return root;
 }
 
+
+void preOrder(node *t)
+{
+    if(t)
+    {
+        cout<<t->data<<" ";
+        preOrder(t->left);
+        preOrder(t->right);
+    }
+}
 int main()
 {
     node *root = NULL;
     root = buildTree(root);
+    preOrder(root);
     return 0;
 }
