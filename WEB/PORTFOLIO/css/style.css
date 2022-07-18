@@ -284,10 +284,10 @@
     }
 
     .portfolio .box-container .box{
-        height: 20rem;
-        width: 26rem;
+        height: 25rem;  /* 20*/
+        width: 32rem;   /* 26*/
         border-radius: 1rem;
-        margin: 2rem;
+        margin: 1rem;  /* 2 rem*/
         overflow: hidden;
         cursor: pointer;
     }
